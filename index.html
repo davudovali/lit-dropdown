@@ -20,9 +20,16 @@
 </head>
 
 <body>
-  <lit-dropdown></lit-dropdown>
+<div style="display: flex; gap: 1rem; margin: 1rem">
+  <lit-dropdown size="small" label="Small button"></lit-dropdown>
+  <lit-dropdown size="small" type="secondary" label="Small button" menuDirection="left"></lit-dropdown>
+  <lit-dropdown size="small" type="success" label="Small button" menuDirection="right"></lit-dropdown>
+  <lit-dropdown size="large" type="info" label="Small button" menuDirection="bottom"></lit-dropdown>
+  <lit-dropdown size="large" type="warning" label="Small button" menuDirection="bottom" alignment="right"></lit-dropdown>
+  <lit-dropdown size="large"  type="danger" label="Small button" menuDirection="top" alignment="right"></lit-dropdown>
+</div>
 
-  <script type="module" src="./out-tsc/src/lit-dropdown.js"></script>
+  <script type="module" src="./out-tsc/src/LitDropdown/lit-dropdown.js"></script>
 </body>
 
 </html>
