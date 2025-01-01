@@ -20,16 +20,154 @@
 </head>
 
 <body>
-<div style="display: flex; gap: 1rem; margin: 1rem">
-  <lit-dropdown size="small" label="Small button"></lit-dropdown>
-  <lit-dropdown size="small" type="secondary" label="Small button" menuDirection="left"></lit-dropdown>
-  <lit-dropdown size="small" type="success" label="Small button" menuDirection="right"></lit-dropdown>
-  <lit-dropdown size="large" type="info" label="Small button" menuDirection="bottom"></lit-dropdown>
-  <lit-dropdown size="large" type="warning" label="Small button" menuDirection="bottom" alignment="right"></lit-dropdown>
-  <lit-dropdown size="large"  type="danger" label="Small button" menuDirection="top" alignment="right"></lit-dropdown>
+<h1>Colors</h1>
+<div style="display: flex; flex-direction: row; flex-wrap: wrap; gap: 1rem; padding: 1rem; max-width: 100vw">
+  <lit-dropdown size="small" label="Primary dropdown">
+    <lit-button type="light" width="w-100">Button</lit-button>
+    <lit-button type="light" width="w-100">Button</lit-button>
+    <lit-button type="light" width="w-100">Button</lit-button>
+  </lit-dropdown>
+  <lit-dropdown size="small" label="Success dropdown" type="success">
+    <lit-button type="light" width="w-100">Button</lit-button>
+    <lit-button type="light" width="w-100">Button</lit-button>
+    <lit-button type="light" width="w-100">Button</lit-button>
+  </lit-dropdown>
+  <lit-dropdown size="small" label="Info dropdown" type="info">
+    <lit-button type="light" width="w-100">Button</lit-button>
+    <lit-button type="light" width="w-100">Button</lit-button>
+    <lit-button type="light" width="w-100">Button</lit-button>
+  </lit-dropdown>
+  <lit-dropdown size="small" label="Secondary dropdown" type="secondary">
+    <lit-button type="light" width="w-100">Button</lit-button>
+    <lit-button type="light" width="w-100">Button</lit-button>
+    <lit-button type="light" width="w-100">Button</lit-button>
+  </lit-dropdown>
+  <lit-dropdown size="small" label="Danger dropdown" type="danger">
+    <lit-button type="light" width="w-100">Button</lit-button>
+    <lit-button type="light" width="w-100">Button</lit-button>
+    <lit-button type="light" width="w-100">Button</lit-button>
+  </lit-dropdown>
+  <lit-dropdown size="small" label="Warning dropdown" type="warning">
+    <lit-button type="light" width="w-100">Button</lit-button>
+    <lit-button type="light" width="w-100">Button</lit-button>
+    <lit-button type="light" width="w-100">Button</lit-button>
+  </lit-dropdown>
+</div>
+<h1>Sizing</h1>
+<div style="display: flex; flex-direction: row; flex-wrap: wrap; gap: 1rem; padding: 1rem; max-width: 100vw">
+  <lit-dropdown size="small" label="Small dropdown">
+    <lit-button type="light" width="w-100">Button</lit-button>
+    <lit-button type="light" width="w-100">Button</lit-button>
+    <lit-button type="light" width="w-100">Button</lit-button>
+  </lit-dropdown>
+  <lit-dropdown size="large" label="Large dropdown">
+    <lit-button type="light" width="w-100">Button</lit-button>
+    <lit-button type="light" width="w-100">Button</lit-button>
+    <lit-button type="light" width="w-100">Button</lit-button>
+  </lit-dropdown>
+</div>
+<h1>Menu position and direction</h1>
+<div style="display: flex; flex-direction: row; flex-wrap: wrap; gap: 1rem; padding: 1rem; max-width: 100vw">
+  <lit-dropdown size="small" label="Dropdown with bottom menu" direction="bottom">
+    <lit-button type="light" width="w-100">Button</lit-button>
+    <lit-button type="light" width="w-100">Button</lit-button>
+    <lit-button type="light" width="w-100">Button</lit-button>
+  </lit-dropdown>
+  <lit-dropdown size="small" label="Dropdown with top menu" direction="top">
+    <lit-button type="light" width="w-100">Button</lit-button>
+    <lit-button type="light" width="w-100">Button</lit-button>
+    <lit-button type="light" width="w-100">Button</lit-button>
+  </lit-dropdown>
+  <lit-dropdown size="small" label="Dropdown with left menu" direction="left">
+    <lit-button type="light" width="w-100">Button</lit-button>
+    <lit-button type="light" width="w-100">Button</lit-button>
+    <lit-button type="light" width="w-100">Button</lit-button>
+  </lit-dropdown>
+  <lit-dropdown size="small" label="Dropdown with right menu" direction="right">
+    <lit-button type="light" width="w-100">Button</lit-button>
+    <lit-button type="light" width="w-100">Button</lit-button>
+    <lit-button type="light" width="w-100">Button</lit-button>
+  </lit-dropdown>
+  <lit-dropdown size="small" label="Dropdown with bottom menu and right alignment" direction="bottom" alignment="right">
+    <lit-button type="light" width="w-100">Button</lit-button>
+    <lit-button type="light" width="w-100">Button</lit-button>
+    <lit-button type="light" width="w-100">Button</lit-button>
+  </lit-dropdown>
+</div>
+<h1>Menu content</h1>
+<div style="display: flex; flex-direction: row; flex-wrap: wrap; gap: 1rem; padding: 1rem; max-width: 100vw">
+  <lit-dropdown size="small" label="Dropdown with different buttons">
+    <lit-button type="success" width="w-100">Success</lit-button>
+    <lit-button type="primary" width="w-100">Primary</lit-button>
+    <lit-button type="info" width="w-100">Info</lit-button>
+    <lit-button type="danger" width="w-100">Danger</lit-button>
+    <lit-button type="secondary" width="w-100">Secondary</lit-button>
+    <lit-button type="light" width="w-100">Light</lit-button>
+  </lit-dropdown>
+  <lit-dropdown size="small" label="Dropdown with long label buttons">
+    <lit-button type="success" width="w-100"><span style="white-space: nowrap">Success with very looooooooong button label</span></lit-button>
+    <lit-button type="primary" width="w-100">Success with very looooooooooooooooooooooooong button label</lit-button>
+    <lit-button type="info" width="w-100">Info</lit-button>
+    <lit-button type="danger" width="w-100">Danger</lit-button>
+    <lit-button type="secondary" width="w-100">Secondary</lit-button>
+    <lit-button type="light" width="w-100">Light</lit-button>
+  </lit-dropdown>
+  <lit-dropdown size="small" label="Dropdown with menu dividers">
+    <lit-button type="light" width="w-100">Button</lit-button>
+    <lit-button type="light" width="w-100">Button</lit-button>
+    <lit-menu-divider></lit-menu-divider>
+
+    <lit-button type="danger" width="w-100">Danger</lit-button>
+    <lit-button type="secondary" width="w-100">Secondary</lit-button>
+    <lit-button type="light" width="w-100">Light</lit-button>
+    <lit-button type="light" width="w-100">Button</lit-button>
+    <lit-menu-divider></lit-menu-divider>
+    <lit-button type="light" width="w-100">Light</lit-button>
+  </lit-dropdown>
+  <lit-dropdown size="small" label="Dropdown with a lot of button">
+    <lit-button type="success" width="w-100">Success</lit-button>
+    <lit-button type="primary" width="w-100">Primary</lit-button>
+    <lit-button type="info" width="w-100">Info</lit-button>
+    <lit-button type="danger" width="w-100">Danger</lit-button>
+    <lit-button type="secondary" width="w-100">Secondary</lit-button>
+    <lit-button type="light" width="w-100">Light</lit-button>
+    <lit-button type="success" width="w-100">Success</lit-button>
+    <lit-button type="primary" width="w-100">Primary</lit-button>
+    <lit-button type="info" width="w-100">Info</lit-button>
+    <lit-button type="danger" width="w-100">Danger</lit-button>
+    <lit-button type="secondary" width="w-100">Secondary</lit-button>
+    <lit-button type="light" width="w-100">Light</lit-button>
+    <lit-button type="success" width="w-100">Success</lit-button>
+    <lit-button type="primary" width="w-100">Primary</lit-button>
+    <lit-button type="info" width="w-100">Info</lit-button>
+    <lit-button type="danger" width="w-100">Danger</lit-button>
+    <lit-button type="secondary" width="w-100">Secondary</lit-button>
+    <lit-button type="light" width="w-100">Light</lit-button>
+    <lit-button type="success" width="w-100">Success</lit-button>
+    <lit-button type="primary" width="w-100">Primary</lit-button>
+    <lit-button type="info" width="w-100">Info</lit-button>
+    <lit-button type="danger" width="w-100">Danger</lit-button>
+    <lit-button type="secondary" width="w-100">Secondary</lit-button>
+    <lit-button type="light" width="w-100">Light</lit-button>
+    <lit-button type="success" width="w-100">Success</lit-button>
+    <lit-button type="primary" width="w-100">Primary</lit-button>
+    <lit-button type="info" width="w-100">Info</lit-button>
+    <lit-button type="danger" width="w-100">Danger</lit-button>
+    <lit-button type="secondary" width="w-100">Secondary</lit-button>
+    <lit-button type="light" width="w-100">Light</lit-button>
+    <lit-button type="success" width="w-100">Success</lit-button>
+    <lit-button type="primary" width="w-100">Primary</lit-button>
+    <lit-button type="info" width="w-100">Info</lit-button>
+    <lit-button type="danger" width="w-100">Danger</lit-button>
+    <lit-button type="secondary" width="w-100">Secondary</lit-button>
+    <lit-button type="light" width="w-100">Light</lit-button>
+  </lit-dropdown>
 </div>
 
-  <script type="module" src="./out-tsc/src/LitDropdown/lit-dropdown.js"></script>
+
+<script type="module" src="./out-tsc/src/LitDropdown/lit-dropdown.js"></script>
+<script type="module" src="./out-tsc/src/LitDropdown/lit-menu-divider.js"></script>
+<script type="module" src="./out-tsc/src/LitButton/lit-button.js"></script>
 </body>
 
 </html>

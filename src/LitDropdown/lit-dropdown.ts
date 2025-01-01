@@ -1,16 +1,8 @@
-import { LitElement, html, css } from 'lit';
+import { LitElement, html } from 'lit';
 import { property, customElement, state } from 'lit/decorators.js';
-import {
-  DropdownSize,
-  DropdownColorType,
-  MenuDirection,
-  MenuAlignment,
-} from './lit-dropdown-types.js';
-import {
-  dropdownSizeValue,
-  dropdownColorValue,
-  menuDirectionValue,
-} from './style-parametors.js';
+import { MenuDirection, MenuAlignment } from './lit-dropdown-types.js';
+import { ColorType, SizeType } from '../types/types.js';
+import { styles } from './styles.js';
 
 const arrowDirectionClassNames = {
   [MenuDirection.LEFT]: 'arrowLeft',
@@ -26,13 +18,11 @@ const menuAlignmentClassNames = {
 
 @customElement('lit-dropdown')
 export class LitDropdown extends LitElement {
-  @property({ type: String }) type: DropdownColorType =
-    DropdownColorType.PRIMARY;
+  @property({ type: String }) type: ColorType = ColorType.PRIMARY;
 
-  @property({ type: String }) size: DropdownSize = DropdownSize.SMALL;
+  @property({ type: String }) size: SizeType = SizeType.SMALL;
 
-  @property({ type: String }) menuDirection: MenuDirection =
-    MenuDirection.BOTTOM;
+  @property({ type: String }) direction: MenuDirection = MenuDirection.BOTTOM;
 
   @property({ type: String }) alignment: MenuAlignment = MenuAlignment.LEFT;
 
@@ -65,7 +55,7 @@ export class LitDropdown extends LitElement {
       @click="${this._onToggle}"
       class="dropleft button ${this.size} ${this.menuIsOpen
         ? 'clicked'
-        : ''} ${this.type} ${arrowDirectionClassNames[this.menuDirection]}"
+        : ''} ${this.type} ${arrowDirectionClassNames[this.direction]}"
     >
       ${this.label}
     </button>
@@ -75,75 +65,14 @@ export class LitDropdown extends LitElement {
     return html`
       <div class="container">
         ${this._renderButton()}
-        <div
+        <slot
           class="menu ${this.menuIsOpen ? 'open' : ''} ${this
-            .menuDirection} ${menuAlignmentClassNames[this.alignment]}"
-        ></div>
+            .direction} ${menuAlignmentClassNames[this.alignment]}"
+        >
+        </slot>
       </div>
     `;
   }
 
-  static styles = [
-    dropdownSizeValue,
-    dropdownColorValue,
-    menuDirectionValue,
-    css`
-      .container {
-        position: relative;
-      }
-      .dropleft {
-        box-shadow: none;
-        border: none;
-        cursor: pointer;
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-start;
-        align-items: center;
-      }
-
-      .dropleft.arrowLeft {
-        flex-direction: row-reverse;
-      }
-
-      .dropleft::after {
-        display: inline-block;
-        width: 0;
-        height: 0;
-        margin-left: 0.255em;
-        vertical-align: 0.255em;
-        content: '';
-        border-top: 0.3em solid;
-        border-right: 0.3em solid transparent;
-        border-bottom: 0;
-        border-left: 0.3em solid transparent;
-      }
-
-      .dropleft.arrowLeft::after {
-        margin-left: 0;
-        margin-right: 0.255em;
-        transform: rotateZ(90deg);
-      }
-      .dropleft.arrowRight::after {
-        transform: rotateZ(-90deg);
-      }
-      .dropleft.arrowTop::after {
-        transform: rotateZ(180deg);
-      }
-      .menu {
-        position: absolute;
-        z-index: 1000;
-        display: none;
-        min-width: 10rem;
-        padding: 0.5rem 0;
-        font-size: 1rem;
-        color: #212529;
-        background-color: #fff;
-        border: 1px solid rgba(0, 0, 0, 0.15);
-        border-radius: 0.25rem;
-      }
-      .menu.open {
-        display: flex;
-      }
-    `,
-  ];
+  static styles = styles;
 }
