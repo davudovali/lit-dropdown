@@ -69,7 +69,7 @@ export const styles = [
       justify-content: flex-start;
       align-items: stretch;
 
-      padding: 0;
+      padding: 0.5rem 0;
       font-size: 1rem;
       color: #212529;
       background-color: #fff;
